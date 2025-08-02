@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Work+Sans:wght@400;500;600;700&display=swap');
+
+
+:root {
+  --primary-color: #007bff;
+  --secondary-color: #6c63ff;
+  --success-color: #28a745;
+  --danger-color: #dc3545;
+  --warning-color: #ffc107;
+  --white: #ffffff;
+  --light-gray: #f8f9fa;
+  --dark-blue: #343a40;
+  --border-color: #dee2e6;
+  --font-heading: 'Poppins', sans-serif;
+  --font-body: 'Open Sans', sans-serif;
+}
+
+
+
+/* === General Dashboard Styles === */
+.dashboard-section {
+    background-color: var(--light-gray);
+    padding: 3rem 0;
+    min-height: 100vh;
+    font-family: var(--font-body);
+}
+
+.page-header {
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    color: var(--white);
+    padding: 2.5rem 0;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+.page-header h1 {
+    margin-bottom: 0.5rem;
+    font-size: 2.5rem;
+}
+.page-header p {
+    font-size: 1.1rem;
+    color: #f0f0f0;
+}
+
+/* === Admin/User Table Container === */
+.table-responsive {
+    overflow-x: auto;
+    background: var(--white);
+    border-radius: 12px;
+    box-shadow: 0 6px 25px rgba(0,0,0,0.06);
+    padding: 1.5rem;
+    transition: 0.3s ease;
+}
+
+/* === Table Structure === */
+.dashboard-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 12px;
+    font-size: 15px;
+}
+.dashboard-table th {
+    background: var(--secondary-color);
+    color: var(--white);
+    padding: 14px;
+    border-radius: 8px 8px 0 0;
+    font-weight: 600;
+    text-align: left;
+}
+.dashboard-table td {
+    background: var(--white);
+    padding: 14px;
+    border-radius: 0;
+    border-bottom: 1px solid var(--border-color);
+}
+.dashboard-table tr {
+    transition: background 0.2s ease;
+}
+.dashboard-table tr:hover {
+    background-color: #f9f9f9;
+}
+
+/* === Status Labels === */
+.status-pending, .status-confirmed, .status-cancelled {
+    display: inline-block;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+.status-pending {
+    background-color: var(--warning-color);
+    color: var(--dark-blue);
+}
+.status-confirmed {
+    background-color: var(--success-color);
+    color: #fff;
+}
+.status-cancelled {
+    background-color: var(--danger-color);
+    color: #fff;
+}
+
+/* === Action Buttons (Admin Only) === */
+.action-btn, .action-btn-cancel {
+    display: inline-block;
+    padding: 8px 14px;
+    font-size: 14px;
+    font-weight: 500;
+    border: none;
+    border-radius: 6px;
+    text-decoration: none;
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+.action-btn {
+    background-color: var(--primary-color);
+}
+.action-btn:hover {
+    background-color: #1a65cc;
+}
+.action-btn-cancel {
+    background-color: var(--danger-color);
+}
+.action-btn-cancel:hover {
+    background-color: #d63447;
+}
+
+/* === No Appointment Message === */
+.dashboard-table td[colspan] {
+    text-align: center;
+    padding: 30px;
+    font-style: italic;
+    color: #888;
+}
+
+/* === Mobile Responsive === */
+@media (max-width: 768px) {
+    .dashboard-table th, .dashboard-table td {
+        padding: 12px;
+        font-size: 14px;
+    }
+
+    .action-btn, .action-btn-cancel {
+        font-size: 12px;
+        padding: 6px 10px;
+    }
+
+    .page-header h1 {
+        font-size: 2rem;
+    }
+}
